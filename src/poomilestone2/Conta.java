@@ -16,6 +16,8 @@ public class Conta {
 		this.dataAbertura = LocalDateTime.now();
 		this.status = true;
 	}
+	
+	
 
 	@Override
 	public int hashCode() {
