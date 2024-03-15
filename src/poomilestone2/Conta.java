@@ -50,22 +50,22 @@ public class Conta {
 	
 	public void sacar(BigDecimal quantia) {
 		if(isStatus() && quantia.compareTo(this.saldo) <= 0) {
-			this.saldo.subtract(quantia);
+			this.saldo = this.saldo.subtract(quantia);
 		}else
 			System.out.println("Operação invalida");
 	}
 	
 	public void depositar(BigDecimal quantia) {
-		if(isStatus()) {
-			this.saldo.add(quantia);
+		if(isStatus()&&quantia.compareTo(saldo) >= 0) {
+			saldo = saldo.add(quantia);
 		}else
 			System.out.println("Operação invalida");
 	}
 	
 	public void transferir(BigDecimal quantia, Conta destino) {
 		if(this.saldo.compareTo(quantia) > 0 && this.isStatus() && destino.isStatus()) {
-			this.saldo.subtract(quantia);
-			destino.saldo.add(quantia);
+			this.saldo = this.saldo.subtract(quantia);
+			destino.saldo = destino.saldo.add(quantia);
 		}else 
 			System.out.println("Operação invalida");
 	}
