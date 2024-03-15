@@ -1,9 +1,10 @@
 package banco.app;
 
 import java.math.BigDecimal;
-import banco.logica.Conta;
 
+import poomilestone2.Cliente;
 import poomilestone2.Conta;
+
 public class aplicacao {
 	
 	public static void main(String[] args) {
